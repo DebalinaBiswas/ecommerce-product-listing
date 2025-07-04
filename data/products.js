@@ -28,7 +28,7 @@ const products = [
     name: "Noise Wireless Mouse",
     price: 899,
     category: "Electronics",
-    image: "assets/images/mouse1.jpg",
+    image: "assets/images/mouse1.JPG",
     description: "Compact and ergonomic wireless mouse with silent click, 2.4GHz connection, and long battery life — ideal for work and travel."
   },
   {
