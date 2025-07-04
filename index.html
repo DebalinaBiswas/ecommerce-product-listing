@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My E-Commerce Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a href="cart.html" class="cart-icon">
+  🛒 Cart (<span id="cart-count">0</span>)
+</a>
+  <!-- Header -->
+  <header>
+    <h1>My E-Commerce Store</h1>
+    <p>Find the best deals on electronics, clothing, books and more</p>
+  </header>
+
+  <!-- Filter Buttons -->
+  <nav id="category-bar">
+    <button onclick="filterProducts('All')">All</button>
+    <button onclick="filterProducts('Electronics')">Electronics</button>
+    <button onclick="filterProducts('Clothing')">Clothing</button>
+    <button onclick="filterProducts('Books')">Books</button>
+  </nav>
+<!-- Price Filter -->
+<section id="price-filter">
+  <label>Min Price: ₹</label>
+  <input type="number" id="min-price" placeholder="0">
+
+  <label>Max Price: ₹</label>
+  <input type="number" id="max-price" placeholder="10000">
+
+  <button onclick="applyPriceFilter()">Apply</button>
+</section>
+
+  <!-- Product Grid -->
+  <main>
+    <section id="product-list"></section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="data/products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

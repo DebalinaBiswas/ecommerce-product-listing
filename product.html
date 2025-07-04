@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="product-detail-container">
+    <button onclick="goBack()" class="back-button">← Back</button>
+
+    <div id="product-detail"></div>
+  </div>
+
+  <script src="data/products.js"></script>
+  <script>
+    function getProductIdFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      return parseInt(params.get('id'));
+    }
+
+    function displayProductDetail(product) {
+      const detailDiv = document.getElementById("product-detail");
+      detailDiv.innerHTML = `
+        <div class="product-detail-card">
+          <img src="${product.image}" alt="${product.name}">
+          <div class="detail-info">
+            <h2>${product.name}</h2>
+            <p class="price">Price: ₹${product.price}</p>
+            <p class="category">Category: ${product.category}</p>
+            <p class="description">${product.description}</p>
+
+          </div>
+        </div>
+      `;
+    }
+
+    function goBack() {
+      window.location.href = "index.html";
+    }
+
+    const productId = getProductIdFromURL();
+    const selectedProduct = products.find(p => p.id === productId);
+
+    if (selectedProduct) {
+      displayProductDetail(selectedProduct);
+    } else {
+      document.getElementById("product-detail").innerHTML = "<p>Product not found.</p>";
+    }
+  </script>
+</body>
+</html>
